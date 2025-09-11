@@ -2,11 +2,12 @@ from packages import lista
 
 class Search():
 
-    def __init__(self, item):
+    def __init__(self):
     
-        self.item = int(item)
+        pass
 
 
-    def proc(self):
-        int (self.item)
-        print(f"Estes são seus dados: {lista.names[self.item]}")
+
+    def proc(self, item):
+        pro = lista.List()
+        pro.search(item)

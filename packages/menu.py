@@ -31,10 +31,6 @@ while True:
             reg.reg()
 
     if op == "2":
-        try:
-            i = int(input("Qual o seu ID? "))
-            if isinstance(i, int):
-                proc = search.Search(i)
-                proc.proc()
-        except:
-            print("Digite um valor de ID válido. (Ex: 0, 1, 2...)")    
+            i = input("Qual o seu ID? ")
+            proc = search.Search()
+            proc.proc(i)
