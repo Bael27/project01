@@ -13,11 +13,12 @@ class List():
     def add(self, name):
         
         global identifier
-        
+
         #Adiciona um usuário criado e validado pelo register.
         names.insert(identifier, name)
+        
+        #Aumenta o valor da variavel para que o próximo usuario criado seja posto no próximo inex da lista.
         identifier += 1
-        print(f"{identifier}")
 
         #Proporciona o id o usuário, que é usado nas pesquisas.
         n = len(names)
@@ -47,5 +48,3 @@ class List():
         #Verifica que há um erro de digitação no id e retorna.
         except:
                 return 3
-
-#Aumenta o valor da variavel para que o próximo usuario criado seja posto no próximo inex da lista.
