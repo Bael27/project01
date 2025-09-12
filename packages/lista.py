@@ -1,4 +1,8 @@
+#lista de nomes e cpfs.
 names = []
+
+#Variavel que faz os ids começarem a ser colocados no index 1 da lista.
+identifier = 1
 
 class List():
 
@@ -7,16 +11,35 @@ class List():
         pass
 
     def add(self, name):
-        names.append(name)
+        
+        #Adiciona um usuário criado e validado pelo register.
+        names.insert(identifier, name)
+
+        #Proporciona o id o usuário, que é usado nas pesquisas.
         n = len(names)
-        print(f"Usuario criado com sucesso! Seu id é: {n - 1}")
+        print(f"Usuario criado com sucesso! Seu id é: {n}")
 
     def search(self, item):
+
+        #verifica se o id que o usuário pesquisou existe ou se está escrito corretamente, se sim, ele mostra as informações do usuário correspondente.
         try:
             item = int(item)
+
+            #Verifica se o id requisitado é 0, se for, devolve um erro.
+            if item == 0:
+                return 3
+
+            #Verifica se o id existe e retorna.
             if item > len(names):
-                return  print("Este ID de usuário não existe")
+                return  1
+            
+            #Verifica se o id fornecido é um inteiro e retorna.
             if isinstance(item, int):
-                print(f"Estes são seus dados: {names[item]}")
+                return 2
+        
+        #Verifica que há um erro de digitação no id e retorna.
         except:
-                print("Digite um valor de ID válido. (Ex: 0, 1, 2...)")
+                return 3
+
+#Aumenta o valor da variavel para que o próximo usuario criado seja posto no próximo inex da lista.
+identifier += 1
