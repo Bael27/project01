@@ -5,7 +5,6 @@ names = []
 identifier = 1
 
 class List():
-    
 
     def __init__(self):
 
@@ -13,15 +12,12 @@ class List():
 
     def add(self, name):
         
+        global identifier
+        
         #Adiciona um usuário criado e validado pelo register.
-        try:
-            names.insert(identifier, name)
-        except:
-            print("access error, verify global identifier.")
-            try:
-                print("current identifier val:", identifier)
-            except:
-                print("identifier unnaccessible inside object")
+        names.insert(identifier, name)
+        identifier += 1
+        print(f"{identifier}")
 
         #Proporciona o id o usuário, que é usado nas pesquisas.
         n = len(names)
@@ -53,7 +49,3 @@ class List():
                 return 3
 
 #Aumenta o valor da variavel para que o próximo usuario criado seja posto no próximo inex da lista.
-identifier += 1
-if __name__ == "__main__":
-    somelist = List()
-    somelist.add("sexo2")
