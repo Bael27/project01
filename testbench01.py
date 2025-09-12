@@ -5,4 +5,5 @@ def Workspace():
     
     menu()
     
-    Workspace()
+    if __name__ == "__main__":
+        Workspace()
