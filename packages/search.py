@@ -1,4 +1,5 @@
 from packages import lista
+from operator import neg
 
 class Search():
 
