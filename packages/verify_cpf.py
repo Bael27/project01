@@ -1,7 +1,6 @@
 import re
 
 cpfs = []
-
 class valid():
 
     def __init__(self, cpf):
@@ -10,7 +9,6 @@ class valid():
 
     def validator(self):
 
-        #Verifica se o cpf ja foi cadastrado anteriormente.
         if self.cpf not in cpfs:
 
             #Retira apenas os dígitos do CPF, ignorando os caracteres especiais.

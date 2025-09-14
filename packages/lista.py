@@ -17,12 +17,12 @@ class List():
         #Adiciona um usuário criado e validado pelo register.
         names.insert(identifier, name)
         
-        #Aumenta o valor da variavel para que o próximo usuario criado seja posto no próximo inex da lista.
+        #Aumenta o valor da variavel para que o próximo usuario criado seja posto no próximo index da lista.
         identifier += 1
 
         #Proporciona o id o usuário, que é usado nas pesquisas.
         n = len(names)
-        print(f"Usuario criado com sucesso! Seu id é: {n}")
+        return print(f"\nUsuario criado com sucesso! Seu id é: {n}")
 
     def search(self, item):
 
@@ -30,11 +30,8 @@ class List():
         try:
             item = int(item)
 
-            #Verifica se o id requisitado é 0, se for, devolve um erro.
-            if item == 0:
-                return 3
-            
-            if item < 0:
+            #Verifica se o id requisitado é 0 ou menor, se for, devolve um erro.
+            if item <= 0:
                 return 3
 
             #Verifica se o id existe e retorna.

@@ -1,7 +1,6 @@
-from packages import register
+from packages import user
 from packages import search
 
-tam = 30
 
 opcoes = {
     "1": "Criar conta",
@@ -11,6 +10,7 @@ opcoes = {
 
 while True:
 
+    tam = 30
     #cria o menu no terminal.
     print(f"+{'-' * tam}+")
     print(f"|{'MENU':^{tam}}|")
@@ -35,10 +35,28 @@ while True:
 
     #Começa o registro de um novo usuário na lista.
     if op == "1":
-        reg = register.Register()
-        reg.reg()
+
+        #Criação do menu de registro.
+        tam = 100
+        print(f"+{'-' * tam}+")
+        print(f"|{'REGISTRAR':^{tam}}|")
+        print(f"+{'-' * tam}+")
+
+        nome = input("Digite seu primeiro e último nome: ")
+        cpf = input("digite seu cpf (siga este exemplo 000.000.000-00): ")
+        reg = user.User(nome, cpf)
+        reg.creation()
 
     #Começa a procura por um usuário existente.
     if op == "2":
-        proc = search.Search()
+
+        #Criação do menu de pesquisa.
+        tam = 100
+        print(f"+{'-' * tam}+")
+        print(f"|{'PESQUISAR':^{tam}}|")
+        print(f"+{'-' * tam}+")
+
+        #Recebe a informação do id desejado para pesquisa e envia para o responsável por procurar esse id.
+        item = input("Qual o seu ID? ")
+        proc = search.Search(item)
         proc.proc()
