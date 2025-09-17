@@ -1,5 +1,5 @@
-from packages import user
-from packages import search
+from packages.user import User
+from packages.search import Search
 
 
 opcoes = {
@@ -11,7 +11,7 @@ opcoes = {
 while True:
 
     tam = 30
-    #cria o menu no terminal.
+    #Cria o menu no terminal.
     print(f"+{'-' * tam}+")
     print(f"|{'MENU':^{tam}}|")
     print(f"+{'-' * tam}+")
@@ -42,9 +42,10 @@ while True:
         print(f"|{'REGISTRAR':^{tam}}|")
         print(f"+{'-' * tam}+")
 
+        #Recebe as informações para a criação de um usuário.
         nome = input("Digite seu primeiro e último nome: ")
         cpf = input("digite seu cpf (siga este exemplo 000.000.000-00): ")
-        reg = user.User(nome, cpf)
+        reg = User(nome, cpf)
         reg.creation()
 
     #Começa a procura por um usuário existente.
@@ -58,5 +59,5 @@ while True:
 
         #Recebe a informação do id desejado para pesquisa e envia para o responsável por procurar esse id.
         item = input("Qual o seu ID? ")
-        proc = search.Search(item)
-        proc.proc()
+        sh = Search(item)
+        sh.show()
